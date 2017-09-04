@@ -2,6 +2,8 @@
 {
 	using System.Threading.Tasks;
 
+	using devRant.Bot.Managers;
+
 	using DevRantBot.Managers;
 
 	using DSharpPlus;
@@ -54,8 +56,7 @@
 			this.Client.Ready += this.EventManager.Ready;
 			this.Client.MessageCreated += this.EventManager.OnMessage;
 			this.Client.SocketErrored += this.EventManager.SocketError;
-			this.Client.MessageReactionAdded += this.EventManager.MessageReactionAdded;
-			this.Client.MessageReactionRemoved += this.EventManager.MessageReactionRemoved;
+			this.Client.ClientErrored += this.EventManager.ClientError;
 
 			this.Commands.RegisterCommands<CommandManager>();
 

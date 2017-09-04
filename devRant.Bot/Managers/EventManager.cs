@@ -43,17 +43,5 @@
 		}
 
 		#endregion
-
-		public Task MessageReactionAdded(MessageReactionAddEventArgs e)
-		{
-			e.Client.DebugLogger.LogMessage(LogLevel.Debug, "ReactionAdded", $"Message ID: {e.Message.Id}. Emoji ID: {e.Emoji.Id}.", DateTime.Now);
-			return Task.CompletedTask;
-		}
-
-		public Task MessageReactionRemoved(MessageReactionRemoveEventArgs e)
-		{
-			e.Client.DebugLogger.LogMessage(LogLevel.Debug, "ReactionRemoved", $"Message ID: {e.Message.Id}. Emoji ID: {e.Emoji.Id}.", DateTime.Now);
-			return Task.CompletedTask;
-		}
 	}
 }
